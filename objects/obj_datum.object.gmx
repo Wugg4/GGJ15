@@ -25,17 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enum ATTRIBUTES {Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
-
-WIDTH = 5;
-HEIGHT = 5;
-
-for(j=0; j&lt;WIDTH; j++){
-for(i=0; i&lt;HEIGHT; i++){
-
-grid[i,j] = instance_create((j+1)*(room_width/(WIDTH+1)),(i+1)*(room_height/(HEIGHT+1)),obj_person);
-}
-}
+            <string>target = 0;
+attribute = random_range(0,ATTRIBUTES.LENGTH-1);
 </string>
           </argument>
         </arguments>

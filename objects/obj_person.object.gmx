@@ -28,6 +28,42 @@
             <string>if(round(random(1))==1) then gender = "Male" else gender = "Female";
 age = round(random_range(18,100));
 
+knowndata = ds_list_create();
+alarm[0] = 60;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for(i=round(random_range(2,10)); i&gt;0; i--){
+targetx = round(random(obj_game.HEIGHT-1));
+targety = round(random(obj_game.WIDTH-1));
+if (obj_game.grid[targetx,targety] != id){
+newdata = instance_create(x,y,obj_datum);
+newdata.target = obj_game.grid[targetx,targety];
+ds_list_add(knowndata,newdata);
+
+} else {
+i++;
+}
+}
 </string>
           </argument>
         </arguments>
