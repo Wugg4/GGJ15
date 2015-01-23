@@ -91,8 +91,8 @@ draw_set_color(c_yellow);
 draw_text_transformed(x+20,y+5, "Age: " + string(age) + "#Gender: " + gender,0.5,0.5,0);
 
 for(i=ds_list_size(knowndata);i&gt;0;i--){
-drawdatum = ds_list_find_value(knowndata,i+1);
-if (drawdatum != -1) {
+drawdatum = ds_list_find_value(knowndata,i);
+if (drawdatum &gt; 0) {
 drawtarget = drawdatum.target;
 draw_line(x,y,drawtarget.x,drawtarget.y);
 }
