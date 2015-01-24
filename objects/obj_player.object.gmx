@@ -84,9 +84,11 @@ locy = -1;
           <argument>
             <kind>1</kind>
             <string>draw_self();
+if(obj_game.winstate == 0){
 for(i = ds_list_size(knowndata) - 1; i &gt;= 0; i-- ){
 drawtarget = ds_list_find_value(knowndata, i);
 draw_line(x,y,drawtarget.target.x,drawtarget.target.y);
+}
 }
 </string>
           </argument>
