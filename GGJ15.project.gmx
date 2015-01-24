@@ -9,6 +9,10 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\spr_hq</sprite>
+    <sprite>sprites\spr_accuse</sprite>
+    <sprite>sprites\spr_collect</sprite>
+    <sprite>sprites\spr_info</sprite>
+    <sprite>sprites\spr_endit</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -19,6 +23,8 @@
     <object>objects\cursor</object>
     <object>objects\obj_hq</object>
     <object>objects\obj_player</object>
+    <object>objects\obj_accuse</object>
+    <object>objects\obj_collect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
