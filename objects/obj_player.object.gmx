@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
+            <string>scale = 1;
+
+vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
 vitals[ATTRIBUTES.Hair] = round(random_range(1, 5));
 vitals[ATTRIBUTES.Eyes] = round(random_range(1, 5));
 vitals[ATTRIBUTES.Skin] = round(random_range(1, 2));
-vitals[ATTRIBUTES.Beard] = round(random_range(1, 2));
-vitals[ATTRIBUTES.Ears] = round(random_range(1, 2));
-vitals[ATTRIBUTES.Hat] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Glasses] = round(random_range(1, 2));
 
 knowndata = ds_list_create();
@@ -60,18 +59,37 @@ locy = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],x,y,scale,scale,0,c_white,1);
+draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],x,y,scale,scale,0,c_white,1);
+draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],x,y,scale,scale,0,c_white,1);
+draw_sprite_ext(playerHat,0,x,y,scale,scale,0,c_white,1);
+
 if(obj_game.winstate == 0){
 for(i = ds_list_size(knowndata) - 1; i &gt;= 0; i-- ){
 drawtarget = ds_list_find_value(knowndata, i);
-draw_line(x,y,drawtarget.target.x,drawtarget.target.y);
+//draw_line(x,y,drawtarget.target.x,drawtarget.target.y);
 
+if (drawtarget.attribute == ATTRIBUTES.Skin){
 draw_sprite_ext(skin,drawtarget.target.vitals[ATTRIBUTES.Skin],drawtarget.target.x,drawtarget.target.y,drawtarget.target.scale,drawtarget.target.scale,0,c_white,1);
+} else if (drawtarget.attribute == ATTRIBUTES.Eyes) {
 draw_sprite_ext(eyes,drawtarget.target.vitals[ATTRIBUTES.Eyes],drawtarget.target.x,drawtarget.target.y,drawtarget.target.scale,drawtarget.target.scale,0,c_white,1);
+} else if (drawtarget.attribute == ATTRIBUTES.Glasses) {
 draw_sprite_ext(glasses,drawtarget.target.vitals[ATTRIBUTES.Glasses],drawtarget.target.x,drawtarget.target.y,drawtarget.target.scale,drawtarget.target.scale,0,c_white,1);
+} else if (drawtarget.attribute == ATTRIBUTES.Hair) {
 draw_sprite_ext(hair,drawtarget.target.vitals[ATTRIBUTES.Hair],drawtarget.target.x,drawtarget.target.y,drawtarget.target.scale,drawtarget.target.scale,0,c_white,1);
-
-
+} else if (drawtarget.attribute == ATTRIBUTES.Hair) {
+draw_sprite_ext(hair,drawtarget.target.vitals[ATTRIBUTES.Hair],drawtarget.target.x,drawtarget.target.y,drawtarget.target.scale,drawtarget.target.scale,0,c_white,1);
+} else if (drawtarget.attribute == ATTRIBUTES.Shirt) {
+draw_sprite_ext(shirt,drawtarget.target.vitals[ATTRIBUTES.Shirt],drawtarget.target.x,drawtarget.target.y,drawtarget.target.scale,drawtarget.target.scale,0,c_white,1);
+}  else if (drawtarget.attribute == ATTRIBUTES.Age) {
+draw_text(drawtarget.target.x,drawtarget.target.y,"Age: " + string(drawtarget.traget.vitals[ATTRIBUTES.Age]));
+} else if (drawtarget.attribute == ATTRIBUTES.Gender) {
+if (drawtarget.target.vitals[ATTRIBUTES.Gender] == 0){
+draw_text(drawtarget.target.x,drawtarget.target.y,"Male");
+} else {
+draw_text(drawtarget.target.x,drawtarget.target.y,"Female");
+}
+}
 }
 }
 </string>
