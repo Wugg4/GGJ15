@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>truth = 1;
 target = 0;
-attribute = random_range(0,ATTRIBUTES.LENGTH-1);
+attribute = round(random_range(0,ATTRIBUTES.LENGTH-1));
 </string>
           </argument>
         </arguments>

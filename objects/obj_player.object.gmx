@@ -82,12 +82,12 @@ draw_sprite_ext(hair,drawtarget.target.vitals[ATTRIBUTES.Hair],drawtarget.target
 } else if (drawtarget.attribute == ATTRIBUTES.Shirt) {
 draw_sprite_ext(shirt,drawtarget.target.vitals[ATTRIBUTES.Shirt],drawtarget.target.x,drawtarget.target.y,drawtarget.target.scale,drawtarget.target.scale,0,c_white,1);
 }  else if (drawtarget.attribute == ATTRIBUTES.Age) {
-draw_text(drawtarget.target.x,drawtarget.target.y,"Age: " + string(drawtarget.traget.vitals[ATTRIBUTES.Age]));
+draw_text(drawtarget.target.x,drawtarget.target.y+65,"Age: " + string(drawtarget.traget.vitals[ATTRIBUTES.Age]));
 } else if (drawtarget.attribute == ATTRIBUTES.Gender) {
 if (drawtarget.target.vitals[ATTRIBUTES.Gender] == 0){
-draw_text(drawtarget.target.x,drawtarget.target.y,"Male");
+draw_text(drawtarget.target.x,drawtarget.target.y+60,"Male");
 } else {
-draw_text(drawtarget.target.x,drawtarget.target.y,"Female");
+draw_text(drawtarget.target.x,drawtarget.target.y+60,"Female");
 }
 }
 }

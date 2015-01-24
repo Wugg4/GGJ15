@@ -45,6 +45,7 @@ locx = 0;
 locy = 0;
 
 scale = 1;
+depth = 100
 </string>
           </argument>
         </arguments>
@@ -241,7 +242,9 @@ draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],5,20,scale,scale,0,c_white,1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_game.winstate == 1 &amp;&amp; isvillain == 1) {
+            <string>
+
+if (obj_game.winstate == 1 &amp;&amp; isvillain == 1) {
 draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],x,y,scale,scale,0,c_white,1);
@@ -263,6 +266,8 @@ if(isvillain == 1){
 //draw_set_color(c_red);
 //draw_rectangle(x,y,x+50,y+50,1);
 }
+
+draw_sprite(anon,0,x,y);
 </string>
           </argument>
         </arguments>
