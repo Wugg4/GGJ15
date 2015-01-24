@@ -30,6 +30,8 @@
 WIDTH = 5;
 HEIGHT = 5;
 
+instance_create((room_width/WIDTH + 1), (room_height/HEIGHT + 1), cursor);
+
 for(j=0; j&lt;WIDTH; j++){
 for(i=0; i&lt;HEIGHT; i++){
 
