@@ -32,12 +32,14 @@ enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGT
 WIDTH = 10;
 HEIGHT = 10;
 
-instance_create((room_width/(WIDTH + 1) - 3), (room_height/(HEIGHT + 1) - 3), cursor);
+instance_create(-10000,-10000, cursor);
 
 for(j=0; j&lt;WIDTH; j++){
 for(i=0; i&lt;HEIGHT; i++){
 
 grid[i,j] = instance_create((j+1)*(room_width/(WIDTH+1)),(i+1)*(room_height/(HEIGHT+1)),obj_person);
+grid[i,j].locx = j;
+grid[i,j].locy = i;
 }
 }
 alarm[0] = 5;

@@ -35,6 +35,9 @@ vitals[ATTRIBUTES.Hat] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Glasses] = round(random_range(1, 2));
 
 knowndata = ds_list_create();
+
+locx = -1;
+locy = -1;
 </string>
           </argument>
         </arguments>

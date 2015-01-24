@@ -39,6 +39,9 @@ vitals[ATTRIBUTES.Glasses] = round(random_range(1, 2));
 
 knowndata = ds_list_create();
 alarm[0] = 5;
+
+locx = 0;
+locy = 0;
 </string>
           </argument>
         </arguments>
@@ -121,11 +124,28 @@ cursor.y = self.y - 3;
             <kind>1</kind>
             <string>personatx = x;
 personaty = y;
+templocx = locx;
+templocy = locy;
 
 x = obj_player.x;
+locx = obj_player.locx;
 y = obj_player.y;
+locy = obj_player.locy;
 obj_player.x = personatx;
+obj_player.locx = templocx;
 obj_player.y = personaty;
+obj_player.locy = templocy;
+
+if (locx == -1) {
+obj_hq.contents = id;
+obj_game.grid[obj_player.locx,obj_player.locy] = obj_player;
+} else if (obj_player.locx == -1) {
+obj_hq.contents = obj_player;
+obj_game.grid[locx,locy] = id;
+} else {
+obj_game.grid[obj_player.locx,obj_player.locy] = obj_player;
+obj_game.grid[locx,locy] = id;
+}
 </string>
           </argument>
         </arguments>
@@ -178,16 +198,16 @@ draw_text(5,20,"There is a security threat in the vicinity. Intelligence suggest
             <kind>1</kind>
             <string>draw_self();
 draw_set_color(c_yellow);
-//draw_text_transformed(x+20,y+5, "Age: " + string(age) + "#Gender: " + gender,0.5,0.5,0);
 
-for(i=ds_list_size(knowndata);i&gt;0;i--){
+//debug visuals for showing information links.
+/*for(i=ds_list_size(knowndata);i&gt;0;i--){
 drawdatum = ds_list_find_value(knowndata,i);
 if (drawdatum &gt; 0) {
 drawtarget = drawdatum.target;
 draw_line(x,y,drawtarget.x,drawtarget.y);
 }
 }
-
+*/
 if(isvillain == 1){
 draw_set_color(c_red);
 draw_rectangle(x,y,x+50,y+50,1);
