@@ -18,6 +18,8 @@
     <sprite>sprites\spr_endit</sprite>
     <sprite>sprites\skin</sprite>
     <sprite>sprites\eyes</sprite>
+    <sprite>sprites\glasses</sprite>
+    <sprite>sprites\shirt</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

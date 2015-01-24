@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>sprite1</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -29,13 +29,14 @@
 //if(round(random(1))==1) then gender = "Male" else gender = "Female";
 //age = round(random_range(18,100));
 vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
-vitals[ATTRIBUTES.Hair] = round(random_range(1, sprite_get_number( hair ) ) );
-vitals[ATTRIBUTES.Eyes] = round( random_range( 1, sprite_get_number( eyes ) ) );
-vitals[ATTRIBUTES.Skin] = round(random_range(1, sprite_get_number( skin ) ) );
+vitals[ATTRIBUTES.Hair] = round(random_range( 0, sprite_get_number( hair ) ) );
+vitals[ATTRIBUTES.Eyes] = round( random_range( 0, sprite_get_number( eyes ) ) );
+vitals[ATTRIBUTES.Skin] = round(random_range( 0, sprite_get_number( skin ) ) );
 vitals[ATTRIBUTES.Beard] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Ears] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Hat] = round(random_range(1, 2));
-vitals[ATTRIBUTES.Glasses] = round(random_range(1, 2));
+vitals[ATTRIBUTES.Glasses] = round(random_range( 0, sprite_get_number( glasses )));
+vitals[ATTRIBUTES.Shirt] = round(random_range( 0, sprite_get_number( shirt )));
 
 playerknows[ATTRIBUTES.LENGTH] = 0;
 
@@ -45,9 +46,6 @@ alarm[0] = 5;
 
 locx = 0;
 locy = 0;
-
-self.width = 58;
-self.height = 58;
 
 scale = 1;
 </string>
@@ -246,6 +244,7 @@ draw_text(5,20,"There is a security threat in the vicinity. Intelligence suggest
             <kind>1</kind>
             <string>draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],x,y,scale,scale,0,c_white,1);
+draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],x,y,scale,scale,0,c_white,1);
 draw_set_color(c_yellow);
 

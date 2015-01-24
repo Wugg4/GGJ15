@@ -30,7 +30,7 @@ winstate = 0;
 
 randomize();
 
-enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
+enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, Shirt, LENGTH};
 
 WIDTH = 6;
 HEIGHT = 6;
@@ -43,6 +43,7 @@ for(i=0; i&lt;HEIGHT; i++){
 grid[i,j] = instance_create((j+1)*(room_width/(WIDTH+1)),(i+1)*(room_height/(HEIGHT+1)),obj_person);
 grid[i,j].locx = j;
 grid[i,j].locy = i;
+
 }
 }
 alarm[0] = 5;
