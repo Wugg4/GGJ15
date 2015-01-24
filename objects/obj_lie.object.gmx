@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>truth = 1;
+            <string>truth = 0;
 target = 0;
 attribute = random_range(0,ATTRIBUTES.LENGTH-1);
+lie = random_range(1,5);
 </string>
           </argument>
         </arguments>

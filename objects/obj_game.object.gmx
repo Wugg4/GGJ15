@@ -31,8 +31,8 @@ randomize();
 
 enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
 
-WIDTH = 8;
-HEIGHT = 8;
+WIDTH = 6;
+HEIGHT = 6;
 
 instance_create(-10000,-10000, cursor);
 

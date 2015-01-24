@@ -37,7 +37,10 @@ vitals[ATTRIBUTES.Ears] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Hat] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Glasses] = round(random_range(1, 2));
 
+playerknows[ATTRIBUTES.LENGTH] = 0;
+
 knowndata = ds_list_create();
+lies = ds_list_create();
 alarm[0] = 5;
 
 locx = 0;
@@ -152,9 +155,14 @@ cursor.y = self.y - 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_accuse.active == 1) {
+            <string>if (obj_accuse.active == 1 &amp;&amp; isvillain == 1) {
+obj_accuse.active = 0;
 obj_game.winstate = 1;
 //instance_destroy();
+} else if (obj_collect.active == 1){
+obj_collect.active = 0;
+ds_list_add(obj_player.knowndata,ds_list_find_value(knowndata,random_range(0,ds_list_size(knowndata))));
+
 } else {
 personatx = x;
 personaty = y;
