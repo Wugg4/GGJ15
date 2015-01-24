@@ -86,8 +86,8 @@ i++;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>cursor.x = self.x
-cursor.y = self.y
+            <string>cursor.x = self.x - 3;
+cursor.y = self.y - 3;
 </string>
           </argument>
         </arguments>
