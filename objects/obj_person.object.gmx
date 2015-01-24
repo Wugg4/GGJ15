@@ -215,10 +215,12 @@ obj_game.grid[locx,locy] = id;
           <argument>
             <kind>1</kind>
             <string>if (isvillain == 1 &amp;&amp; obj_game.winstate == 0){
-//comment1 = string(vitals[0] + " years old");
-//comment2 = string(vitals[1] + " strands of hair");
-//comment3 = string(vitals[2] + " eyes");
-draw_text(5,20,"There is a security threat in the vicinity. Intelligence suggests he is " + string(vitals[0]) + " years old, with " + string(vitals[1]) + " strand/s of hair, and " + string(vitals[2]) + " eyes.");
+draw_text(5,5,"This is your target:");
+
+draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],5,20,scale,scale,0,c_white,1);
+draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],5,20,scale,scale,0,c_white,1);
+draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],5,20,scale,scale,0,c_white,1);
+draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],5,20,scale,scale,0,c_white,1);
 }
 </string>
           </argument>
@@ -242,12 +244,12 @@ draw_text(5,20,"There is a security threat in the vicinity. Intelligence suggest
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],x,y,scale,scale,0,c_white,1);
+            <string>/*draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],x,y,scale,scale,0,c_white,1);
 draw_set_color(c_yellow);
-
+*/
 //debug visuals for showing information links.
 /*for(i=ds_list_size(knowndata);i&gt;0;i--){
 drawdatum = ds_list_find_value(knowndata,i);
@@ -258,8 +260,8 @@ draw_line(x,y,drawtarget.x,drawtarget.y);
 }
 */
 if(isvillain == 1){
-draw_set_color(c_red);
-draw_rectangle(x,y,x+50,y+50,1);
+//draw_set_color(c_red);
+//draw_rectangle(x,y,x+50,y+50,1);
 }
 </string>
           </argument>
