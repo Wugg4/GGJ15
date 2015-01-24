@@ -105,7 +105,7 @@ cursor.y = self.y - 3;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -122,7 +122,11 @@ cursor.y = self.y - 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>personatx = x;
+            <string>if (obj_accuse.active == 1) {
+obj_game.winstate = 1;
+instance_destroy();
+} else {
+personatx = x;
 personaty = y;
 templocx = locx;
 templocy = locy;
@@ -145,6 +149,7 @@ obj_game.grid[locx,locy] = id;
 } else {
 obj_game.grid[obj_player.locx,obj_player.locy] = obj_player;
 obj_game.grid[locx,locy] = id;
+}
 }
 </string>
           </argument>

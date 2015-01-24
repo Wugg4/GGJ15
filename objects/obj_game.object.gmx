@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize();
+            <string>winstate = 0;
+
+randomize();
 
 enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
 
