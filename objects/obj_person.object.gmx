@@ -29,9 +29,9 @@
 //if(round(random(1))==1) then gender = "Male" else gender = "Female";
 //age = round(random_range(18,100));
 vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
-vitals[ATTRIBUTES.Hair] = round(random_range(1, 5));
-vitals[ATTRIBUTES.Eyes] = round(random_range(1, 5));
-vitals[ATTRIBUTES.Skin] = round(random_range(1, 2));
+vitals[ATTRIBUTES.Hair] = round(random_range(1, sprite_get_number( hair ) ) );
+vitals[ATTRIBUTES.Eyes] = round( random_range( 1, sprite_get_number( eyes ) ) );
+vitals[ATTRIBUTES.Skin] = round(random_range(1, sprite_get_number( skin ) ) );
 vitals[ATTRIBUTES.Beard] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Ears] = round(random_range(1, 2));
 vitals[ATTRIBUTES.Hat] = round(random_range(1, 2));
@@ -45,6 +45,9 @@ alarm[0] = 5;
 
 locx = 0;
 locy = 0;
+
+self.width = 58;
+self.height = 58;
 
 scale = 1;
 </string>
@@ -241,7 +244,9 @@ draw_text(5,20,"There is a security threat in the vicinity. Intelligence suggest
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite0,0,x,y,scale,scale,0,c_white,1);
+            <string>draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],x,y,scale,scale,0,c_white,1);
+draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],x,y,scale,scale,0,c_white,1);
+draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],x,y,scale,scale,0,c_white,1);
 draw_set_color(c_yellow);
 
 //debug visuals for showing information links.
