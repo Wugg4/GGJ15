@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\hair</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\spr_hq</sprite>
@@ -13,6 +14,8 @@
     <sprite>sprites\spr_collect</sprite>
     <sprite>sprites\spr_info</sprite>
     <sprite>sprites\spr_endit</sprite>
+    <sprite>sprites\skin</sprite>
+    <sprite>sprites\eyes</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
