@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>winstate = 0;
+            <string>wtf = id;
+winstate = 0;
 
 randomize();
 

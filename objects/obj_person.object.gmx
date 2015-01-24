@@ -161,7 +161,8 @@ obj_game.winstate = 1;
 //instance_destroy();
 } else if (obj_collect.active == 1){
 obj_collect.active = 0;
-ds_list_add(obj_player.knowndata,ds_list_find_value(knowndata,random_range(0,ds_list_size(knowndata))));
+tempdata = ds_list_find_value(knowndata,1);
+ds_list_add(obj_player.knowndata,tempdata);
 
 } else {
 personatx = x;
