@@ -29,8 +29,12 @@
 
 enum ATTRIBUTES {Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
 
+<<<<<<< HEAD
 WIDTH = 10;
 HEIGHT = 10;
+=======
+instance_create((room_width/(WIDTH + 1) - 3), (room_height/(HEIGHT + 1) - 3), cursor);
+>>>>>>> origin/master
 
 for(j=0; j&lt;WIDTH; j++){
 for(i=0; i&lt;HEIGHT; i++){
