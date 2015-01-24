@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(round(random(1))==1) then gender = "Male" else gender = "Female";
+            <string>isvillain = 0;
+if(round(random(1))==1) then gender = "Male" else gender = "Female";
 age = round(random_range(18,100));
 
 knowndata = ds_list_create();
@@ -69,30 +70,6 @@ i++;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>cursor.x = self.x
-cursor.y = self.y
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -113,6 +90,19 @@ cursor.y = self.y
             <string>draw_self();
 draw_set_color(c_yellow);
 draw_text_transformed(x+20,y+5, "Age: " + string(age) + "#Gender: " + gender,0.5,0.5,0);
+
+for(i=ds_list_size(knowndata);i&gt;0;i--){
+drawdatum = ds_list_find_value(knowndata,i);
+if (drawdatum &gt; 0) {
+drawtarget = drawdatum.target;
+draw_line(x,y,drawtarget.x,drawtarget.y);
+}
+}
+
+if(isvillain == 1){
+draw_set_color(c_red);
+draw_rectangle(x,y,x+50,y+50,1);
+}
 </string>
           </argument>
         </arguments>
