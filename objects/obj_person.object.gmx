@@ -42,6 +42,8 @@ alarm[0] = 5;
 
 locx = 0;
 locy = 0;
+
+scale = 1;
 </string>
           </argument>
         </arguments>
@@ -81,6 +83,34 @@ i++;
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (obj_game.winstate == 1 &amp;&amp; isvillain == 0) {
+instance_destroy();
+}
+if (obj_game.winstate == 1 &amp;&amp; isvillain == 1) {
+scale += 0.1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="10">
       <action>
         <libid>1</libid>
@@ -105,7 +135,7 @@ cursor.y = self.y - 3;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -122,7 +152,11 @@ cursor.y = self.y - 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>personatx = x;
+            <string>if (obj_accuse.active == 1) {
+obj_game.winstate = 1;
+//instance_destroy();
+} else {
+personatx = x;
 personaty = y;
 templocx = locx;
 templocy = locy;
@@ -146,6 +180,7 @@ obj_game.grid[locx,locy] = id;
 obj_game.grid[obj_player.locx,obj_player.locy] = obj_player;
 obj_game.grid[locx,locy] = id;
 }
+}
 </string>
           </argument>
         </arguments>
@@ -168,7 +203,7 @@ obj_game.grid[locx,locy] = id;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (isvillain == 1){
+            <string>if (isvillain == 1 &amp;&amp; obj_game.winstate == 0){
 //comment1 = string(vitals[0] + " years old");
 //comment2 = string(vitals[1] + " strands of hair");
 //comment3 = string(vitals[2] + " eyes");
@@ -196,7 +231,7 @@ draw_text(5,20,"There is a security threat in the vicinity. Intelligence suggest
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>draw_sprite_ext(sprite0,0,x,y,scale,scale,0,c_white,1);
 draw_set_color(c_yellow);
 
 //debug visuals for showing information links.
