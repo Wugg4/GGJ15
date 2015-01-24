@@ -30,7 +30,7 @@ winstate = 0;
 
 randomize();
 
-enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, Shirt, LENGTH};
+enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Glasses, Shirt, LENGTH};
 
 WIDTH = 6;
 HEIGHT = 6;
