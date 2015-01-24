@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\spr_hq</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -16,6 +17,8 @@
     <object>objects\obj_person</object>
     <object>objects\obj_datum</object>
     <object>objects\cursor</object>
+    <object>objects\obj_hq</object>
+    <object>objects\obj_player</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
