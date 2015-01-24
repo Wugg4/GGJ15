@@ -25,10 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enum ATTRIBUTES {Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
+            <string>randomize();
 
-WIDTH = 5;
-HEIGHT = 5;
+enum ATTRIBUTES {Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
+
+WIDTH = 10;
+HEIGHT = 10;
 
 for(j=0; j&lt;WIDTH; j++){
 for(i=0; i&lt;HEIGHT; i++){
@@ -36,6 +38,30 @@ for(i=0; i&lt;HEIGHT; i++){
 grid[i,j] = instance_create((j+1)*(room_width/(WIDTH+1)),(i+1)*(room_height/(HEIGHT+1)),obj_person);
 }
 }
+alarm[0] = 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>grid[random_range(1,WIDTH),random_range(1,HEIGHT)].isvillain = 1;
 </string>
           </argument>
         </arguments>

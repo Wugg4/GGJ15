@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(round(random(1))==1) then gender = "Male" else gender = "Female";
+            <string>isvillain = 0;
+if(round(random(1))==1) then gender = "Male" else gender = "Female";
 age = round(random_range(18,100));
 
 knowndata = ds_list_create();
@@ -96,6 +97,11 @@ if (drawdatum &gt; 0) {
 drawtarget = drawdatum.target;
 draw_line(x,y,drawtarget.x,drawtarget.y);
 }
+}
+
+if(isvillain == 1){
+draw_set_color(c_red);
+draw_rectangle(x,y,x+50,y+50,1);
 }
 </string>
           </argument>
