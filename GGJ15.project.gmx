@@ -20,6 +20,7 @@
     <sprite>sprites\eyes</sprite>
     <sprite>sprites\glasses</sprite>
     <sprite>sprites\shirt</sprite>
+    <sprite>sprites\playerHat</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
