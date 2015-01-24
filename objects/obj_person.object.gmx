@@ -26,11 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>isvillain = 0;
-if(round(random(1))==1) then gender = "Male" else gender = "Female";
-age = round(random_range(18,100));
+//if(round(random(1))==1) then gender = "Male" else gender = "Female";
+//age = round(random_range(18,100));
+vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
+vitals[ATTRIBUTES.Hair] = round(random_range(1, 5));
+vitals[ATTRIBUTES.Eyes] = round(random_range(1, 5));
+vitals[ATTRIBUTES.Skin] = round(random_range(1, 2));
+vitals[ATTRIBUTES.Beard] = round(random_range(1, 2));
+vitals[ATTRIBUTES.Ears] = round(random_range(1, 2));
+vitals[ATTRIBUTES.Hat] = round(random_range(1, 2));
+vitals[ATTRIBUTES.Glasses] = round(random_range(1, 2));
 
 knowndata = ds_list_create();
-alarm[0] = 60;
+alarm[0] = 5;
 </string>
           </argument>
         </arguments>
@@ -94,6 +102,34 @@ cursor.y = self.y - 3;
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (isvillain == 1){
+//comment1 = string(vitals[0] + " years old");
+//comment2 = string(vitals[1] + " strands of hair");
+//comment3 = string(vitals[2] + " eyes");
+draw_text(5,20,"There is a security threat in the vicinity. Intelligence suggests he is " + string(vitals[0]) + " years old, with " + string(vitals[1]) + " strand/s of hair, and " + string(vitals[2]) + " eyes.");
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -113,7 +149,7 @@ cursor.y = self.y - 3;
             <kind>1</kind>
             <string>draw_self();
 draw_set_color(c_yellow);
-draw_text_transformed(x+20,y+5, "Age: " + string(age) + "#Gender: " + gender,0.5,0.5,0);
+//draw_text_transformed(x+20,y+5, "Age: " + string(age) + "#Gender: " + gender,0.5,0.5,0);
 
 for(i=ds_list_size(knowndata);i&gt;0;i--){
 drawdatum = ds_list_find_value(knowndata,i);

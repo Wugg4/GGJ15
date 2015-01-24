@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>randomize();
 
-enum ATTRIBUTES {Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
+enum ATTRIBUTES {Age, Hair, Eyes, Skin, Gender, Beard, Ears, Hat, Glasses, LENGTH};
 
 WIDTH = 10;
 HEIGHT = 10;
