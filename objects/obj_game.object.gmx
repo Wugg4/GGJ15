@@ -48,9 +48,9 @@ grid[i,j].locy = i;
 }
 alarm[0] = 5;
 
-instance_create(0,200,obj_hq);
-instance_create(0,328,obj_collect);
-instance_create(0,366,obj_accuse);
+instance_create(0+64,200,obj_hq);
+instance_create(0+64,328,obj_collect);
+instance_create(0+64,366,obj_accuse);
 
 instance_create(18,450,obj_panel);
 </string>

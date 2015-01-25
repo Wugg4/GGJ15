@@ -223,11 +223,11 @@ obj_game.grid[locx,locy] = id;
             <string>if (isvillain == 1 &amp;&amp; obj_game.winstate == 0){
 draw_text(5,5,"This is your target:");
 
-draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],5,20,scale,scale,0,c_white,1);
-draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],5,20,scale,scale,0,c_white,1);
-draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],5,20,scale,scale,0,c_white,1);
-draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],5,20,scale,scale,0,c_white,1);
-draw_sprite_ext(shirt,vitals[ATTRIBUTES.Shirt],5,20,scale,scale,0,c_white,1);
+draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],29,49,scale,scale,0,c_white,1);
+draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],29,49,scale,scale,0,c_white,1);
+draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],29,49,scale,scale,0,c_white,1);
+draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],29,49,scale,scale,0,c_white,1);
+draw_sprite_ext(shirt,vitals[ATTRIBUTES.Shirt],29,49,scale,scale,0,c_white,1);
 }
 </string>
           </argument>
@@ -276,8 +276,10 @@ if(isvillain == 1){
 //draw_set_color(c_red);
 //draw_rectangle(x,y,x+50,y+50,1);
 }
-
+if (obj_game.winstate == 0) {
 draw_sprite(anon,0,x,y);
+}
+
 draw_text(x,y+55,string(locx) + " " + string(locy));
 </string>
           </argument>
