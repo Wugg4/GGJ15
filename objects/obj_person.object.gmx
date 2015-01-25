@@ -29,11 +29,11 @@
 //if(round(random(1))==1) then gender = "Male" else gender = "Female";
 //age = round(random_range(18,100));
 vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
-vitals[ATTRIBUTES.Hair] = round(random_range( 0, sprite_get_number( hair ) ) );
-vitals[ATTRIBUTES.Eyes] = round( random_range( 0, sprite_get_number( eyes ) ) );
-vitals[ATTRIBUTES.Skin] = round(random_range( 0, sprite_get_number( skin ) ) );
-vitals[ATTRIBUTES.Glasses] = round(random_range( 0, sprite_get_number( glasses )));
-vitals[ATTRIBUTES.Shirt] = round(random_range( 0, sprite_get_number( shirt )));
+vitals[ATTRIBUTES.Hair] = round(random_range( 0, sprite_get_number( hair ) -1 ) );
+vitals[ATTRIBUTES.Eyes] = round( random_range( 0, sprite_get_number( eyes ) -1 ) );
+vitals[ATTRIBUTES.Skin] = round(random_range( 0, sprite_get_number( skin ) -1 ) );
+vitals[ATTRIBUTES.Glasses] = round(random_range( 0, sprite_get_number( glasses ) -1 ) );
+vitals[ATTRIBUTES.Shirt] = round(random_range( 0, sprite_get_number( shirt ) -1 ) );
 
 playerknows[ATTRIBUTES.LENGTH] = 0;
 
@@ -161,7 +161,7 @@ audio_play_sound(DC,1,0);
 //instance_destroy();
 } else if (obj_collect.active == 1){
 obj_collect.active = 0;
-tempdata = ds_list_find_value(knowndata,random_range(0,ds_list_size(knowndata)));
+tempdata = ds_list_find_value(knowndata,random_range(0,ds_list_size(knowndata) - 1));
 ds_list_add(obj_player.knowndata,tempdata);
 
 } else {
@@ -219,6 +219,7 @@ draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],5,20,scale,scale,0,c_white,1);
 draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],5,20,scale,scale,0,c_white,1);
 draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],5,20,scale,scale,0,c_white,1);
 draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],5,20,scale,scale,0,c_white,1);
+draw_sprite_ext(shirt,vitals[ATTRIBUTES.Shirt],5,20,scale,scale,0,c_white,1);
 }
 </string>
           </argument>
@@ -249,6 +250,7 @@ draw_sprite_ext(skin,vitals[ATTRIBUTES.Skin],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],x,y,scale,scale,0,c_white,1);
+draw_sprite_ext(shirt,vitals[ATTRIBUTES.Shirt],x,y,scale,scale,0,c_white,1);
 }
 
 draw_set_color(c_yellow);
