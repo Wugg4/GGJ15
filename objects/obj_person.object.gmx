@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>isvillain = 0;
+            <string>
+isvillain = 0;
 
 vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
 vitals[ATTRIBUTES.Hair] = floor(random_range( 0, sprite_get_number( hair ) ) );
