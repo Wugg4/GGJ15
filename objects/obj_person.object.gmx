@@ -228,6 +228,12 @@ draw_sprite_ext(eyes,vitals[ATTRIBUTES.Eyes],29,49,scale,scale,0,c_white,1);
 draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],29,49,scale,scale,0,c_white,1);
 draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],29,49,scale,scale,0,c_white,1);
 draw_sprite_ext(shirt,vitals[ATTRIBUTES.Shirt],29,49,scale,scale,0,c_white,1);
+draw_text(5,80,"Age: " + string(vitals[ATTRIBUTES.Age]))
+ if (vitals[ATTRIBUTES.Gender] == 0){
+        draw_text(5,94,"Male");
+    } else {
+        draw_text(5,94,"Female");
+    }
 }
 </string>
           </argument>
@@ -280,7 +286,7 @@ if (obj_game.winstate == 0) {
 draw_sprite(anon,0,x,y);
 }
 
-draw_text(x,y+55,string(locx) + " " + string(locy));
+//draw_text(x,y+55,string(locx) + " " + string(locy));
 </string>
           </argument>
         </arguments>

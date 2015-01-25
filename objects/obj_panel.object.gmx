@@ -77,7 +77,9 @@ direction = direction + 180;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(spr_panelarrow,0,x,y,1,1,direction,c_white,1)
+            <string>if(obj_game.winstate==0) {
+
+draw_sprite_ext(spr_panelarrow,0,x,y,1,1,direction,c_white,1)
 
 if(popped == 1) {
 draw_set_color(c_blue);
@@ -90,7 +92,7 @@ draw_text(25, 450 + (i*10), string(drawtarget.id));
 
 }
 
-
+}
 }
 </string>
           </argument>

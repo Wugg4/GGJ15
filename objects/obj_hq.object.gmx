@@ -50,7 +50,9 @@
           <argument>
             <kind>1</kind>
             <string>depth = 1000;
+if (obj_game.winstate == 0){
 draw_self();
+}
 </string>
           </argument>
         </arguments>

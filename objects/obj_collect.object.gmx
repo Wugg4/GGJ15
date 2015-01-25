@@ -76,9 +76,11 @@ obj_accuse.active = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if (obj_game.winstate == 0){
+draw_self();
 if (active == 1) {
 draw_sprite(spr_info,0,device_mouse_x(0),device_mouse_y(0));
+}
 }
 </string>
           </argument>
