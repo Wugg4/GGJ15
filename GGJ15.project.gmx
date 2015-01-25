@@ -22,6 +22,7 @@
     <sprite>sprites\shirt</sprite>
     <sprite>sprites\playerHat</sprite>
     <sprite>sprites\anon</sprite>
+    <sprite>sprites\spr_panelarrow</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -35,6 +36,7 @@
     <object>objects\obj_accuse</object>
     <object>objects\obj_collect</object>
     <object>objects\obj_lie</object>
+    <object>objects\obj_panel</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

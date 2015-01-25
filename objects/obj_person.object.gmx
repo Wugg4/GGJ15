@@ -26,14 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>isvillain = 0;
-//if(round(random(1))==1) then gender = "Male" else gender = "Female";
-//age = round(random_range(18,100));
+
 vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
-vitals[ATTRIBUTES.Hair] = round(random_range( 0, sprite_get_number( hair ) -1 ) );
-vitals[ATTRIBUTES.Eyes] = round( random_range( 0, sprite_get_number( eyes ) -1 ) );
-vitals[ATTRIBUTES.Skin] = round(random_range( 0, sprite_get_number( skin ) -1 ) );
-vitals[ATTRIBUTES.Glasses] = round(random_range( 0, sprite_get_number( glasses ) -1 ) );
-vitals[ATTRIBUTES.Shirt] = round(random_range( 0, sprite_get_number( shirt ) -1 ) );
+vitals[ATTRIBUTES.Hair] = floor(random_range( 0, sprite_get_number( hair ) ) );
+vitals[ATTRIBUTES.Eyes] = floor(random_range( 0, sprite_get_number( eyes ) ) );
+vitals[ATTRIBUTES.Skin] = floor(random_range( 0, sprite_get_number( skin ) ) );
+vitals[ATTRIBUTES.Glasses] = floor(random_range( 0, sprite_get_number( glasses )));
+vitals[ATTRIBUTES.Shirt] = floor(random_range( 0, sprite_get_number( shirt )));
+vitals[ATTRIBUTES.Gender] = round(random_range(0,1));
 
 playerknows[ATTRIBUTES.LENGTH] = 0;
 
@@ -182,7 +182,13 @@ obj_player.locy = templocy;
 if (locx == -1) {
 obj_hq.contents = id;
 obj_game.grid[obj_player.locx,obj_player.locy] = obj_player;
+
+for(i=0;i&lt;ds_list_size(knowndata);i++){
+
+ds_list_add(obj_player.knowndata,ds_list_find_value(knowndata,i));
+}
 } else if (obj_player.locx == -1) {
+
 obj_hq.contents = obj_player;
 obj_game.grid[locx,locy] = id;
 } else {
@@ -252,7 +258,7 @@ draw_sprite_ext(glasses,vitals[ATTRIBUTES.Glasses],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(hair,vitals[ATTRIBUTES.Hair],x,y,scale,scale,0,c_white,1);
 draw_sprite_ext(shirt,vitals[ATTRIBUTES.Shirt],x,y,scale,scale,0,c_white,1);
 }
-
+//draw_text(x+25,y+60,string(id));
 draw_set_color(c_yellow);
 
 //debug visuals for showing information links.
@@ -270,6 +276,7 @@ if(isvillain == 1){
 }
 
 draw_sprite(anon,0,x,y);
+draw_text(x,y+55,string(locx) + " " + string(locy));
 </string>
           </argument>
         </arguments>

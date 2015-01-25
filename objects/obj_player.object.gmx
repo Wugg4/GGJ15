@@ -28,11 +28,12 @@
             <string>scale = 1;
 
 vitals[ATTRIBUTES.Age] = round(random_range(20, 80));
-vitals[ATTRIBUTES.Hair] = round(random_range(1, 5));
-vitals[ATTRIBUTES.Eyes] = round(random_range(1, 5));
-vitals[ATTRIBUTES.Skin] = round(random_range(1, 2));
-vitals[ATTRIBUTES.Glasses] = round(random_range(1, 2));
-vitals[ATTRIBUTES.Shirt] = round(random_range(0, sprite_get_number(shirt)));
+vitals[ATTRIBUTES.Hair] = floor(random_range( 0, sprite_get_number( hair ) ) );
+vitals[ATTRIBUTES.Eyes] = floor(random_range( 0, sprite_get_number( eyes ) ) );
+vitals[ATTRIBUTES.Skin] = floor(random_range( 0, sprite_get_number( skin ) ) );
+vitals[ATTRIBUTES.Glasses] = floor(random_range( 0, sprite_get_number( glasses )));
+vitals[ATTRIBUTES.Shirt] = floor(random_range( 0, sprite_get_number( shirt )));
+vitals[ATTRIBUTES.Gender] = round(random_range(0,1));
 
 knowndata = ds_list_create();
 
