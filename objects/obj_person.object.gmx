@@ -182,7 +182,13 @@ obj_player.locy = templocy;
 if (locx == -1) {
 obj_hq.contents = id;
 obj_game.grid[obj_player.locx,obj_player.locy] = obj_player;
+
+for(i=0;i&lt;ds_list_size(knowndata);i++){
+
+ds_list_add(obj_player.knowndata,ds_list_find_value(knowndata,i));
+}
 } else if (obj_player.locx == -1) {
+
 obj_hq.contents = obj_player;
 obj_game.grid[locx,locy] = id;
 } else {
@@ -268,6 +274,7 @@ if(isvillain == 1){
 }
 
 draw_sprite(anon,0,x,y);
+draw_text(x,y+55,string(locx) + " " + string(locy));
 </string>
           </argument>
         </arguments>

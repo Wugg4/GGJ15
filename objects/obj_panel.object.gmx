@@ -83,7 +83,7 @@ if(popped == 1) {
 draw_set_color(c_blue);
 draw_rectangle(20,450,500,900,0);
 draw_set_color(c_yellow);
-for(i = ds_list_size(obj_player.knowndata); i &gt;= 0; i--){
+for(i = ds_list_size(obj_player.knowndata)-1; i &gt;= 0; i--){
 drawtarget = ds_list_find_value(obj_player.knowndata,i);
 draw_text(25, 450 + (i*10), string(drawtarget.id));
 
