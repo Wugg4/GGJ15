@@ -107,6 +107,8 @@ instance_destroy();
 }
 if (obj_game.winstate == 1 &amp;&amp; isvillain == 1) {
 scale += 0.1;
+x=x - ((x - (room_width/2))/3);
+y=y - ((y - (room_height/2))/3);
 }
 </string>
           </argument>
